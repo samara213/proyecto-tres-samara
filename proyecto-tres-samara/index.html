@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArrayPlayer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="top-menu">
+        <div class="menu-brand">
+            <div class="logo-area">
+                <button class="nav-hamburger-btn" id="header-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <i class="fas fa-music logo-icon"></i>
+                <span class="brand-name">ArrayPlayer</span>
+            </div>
+            <p class="frase" id="track-phrase">"Miradas fijas como estrellas que iluminan la noche profunda"</p>
+        </div>
+        
+        <div class="menu-login">
+            <button class="login-trigger-btn" id="login-btn"><i class="fas fa-user-circle"></i> Iniciar Sesión</button>
+        </div>
+    </header>
+
+    <div class="header-dropdown" id="dropdown-menu">
+        <div class="dropdown-content">
+            <ul class="dropdown-links">
+                <li><button class="menu-action-link active-tab-btn" id="btn-show-player"><i class="fas fa-play-circle"></i> Principal</button></li>
+                <li><button class="menu-action-link" id="btn-show-tracks"><i class="fas fa-list-ul"></i> Lista de Canciones</button></li>
+            </ul>
+
+            <div class="songs-shortcut-list" id="js-songs-menu"></div>
+
+            <div class="dropdown-welcome">
+                <h4>¡Bienvenido a ArrayPlayer!</h4>
+                <p>Sintoniza tus emociones al ritmo de la noche.</p>
+                <button id="btn-change-phrase" class="phrase-action-btn"><i class="fas fa-random"></i> Cambiar Frase</button>
+            </div>
+
+            <div class="dropdown-socials">
+                <a href="https://www.instagram.com" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.twitter.com" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+
+   <div class="player-container" id="player-view-section">
+        <div class="player-header">
+            <i class="fas fa-chevron-down"></i>
+            <p>REPRODUCIENDO AHORA</p>
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <div class="top-row-player">
+            <div class="album-art">
+                <img src="img/beast.jpg" alt="Album Art" id="track-art">
+            </div>
+            <div class="track-details">
+                <h2 id="track-title">Beast</h2>
+                <h3 id="track-artist">Mia Martina</h3>
+            </div>
+        </div>
+
+        <div class="bottom-controls-row">
+            <div class="progress-container">
+                <span class="current-time">0:00</span>
+                <input type="range" class="progress-bar" min="0" max="100" value="0">
+                <span class="duration-time">0:00</span>
+            </div>
+
+            <div class="controls-and-volume-wrapper">
+                <div class="player-controls">
+                    <button class="control-btn shuffle"><i class="fas fa-random"></i></button>
+                    <button class="control-btn prev"><i class="fas fa-step-backward"></i></button>
+                    <button class="control-btn play-pause"><i class="fas fa-play"></i></button>
+                    <button class="control-btn next"><i class="fas fa-step-forward"></i></button>
+                    <button class="control-btn repeat"><i class="fas fa-redo"></i></button>
+                </div>
+
+                <div class="volume-container">
+                    <i class="fas fa-volume-down"></i>
+                    <input type="range" class="volume-slider" min="0" max="100" value="70">
+                    <i class="fas fa-volume-up"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="login-modal">
+        <div class="modal-content">
+            <button class="close-modal-btn" id="close-modal">&times;</button>
+            <h2>Bienvenido a ArrayPlayer</h2>
+            <p>Ingresa tus datos para conectar tu cuenta</p>
+            
+            <form id="login-form">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" placeholder="Nombre de usuario" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Contraseña" required>
+                </div>
+                <button type="submit" class="submit-login-btn">Ingresar</button>
+            </form>
+        </div>
+    </div>
+  
+    <script src="script.js"></script>
+</body>
+</html>
