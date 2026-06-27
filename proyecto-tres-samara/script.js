@@ -154,6 +154,11 @@ function playTrack() {
     audio.play().catch(err => console.log("Auto-play detenido por el navegador"));
     isPlaying = true;
     playPauseIcon.className = 'fas fa-pause';
+	
+	if (playerContainer) {
+        playerContainer.classList.add('music-playing');
+    }
+	
     updateDropdownActiveSong();
 }
 
@@ -161,6 +166,11 @@ function pauseTrack() {
     audio.pause();
     isPlaying = false;
     playPauseIcon.className = 'fas fa-play';
+	
+	if (playerContainer) {
+        playerContainer.classList.remove('music-playing');
+    }
+	
     updateDropdownActiveSong();
 }
 
